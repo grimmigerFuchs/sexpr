@@ -1,0 +1,11 @@
+name: sexpr
+description: |
+  A small s-expression parser based on fast-sexpr
+version: 0.1.0
+
+authors:
+  - grimmigerFuchs <dominic.grimm@gmail.com>
+
+crystal: 1.2.0
+
+license: MIT
