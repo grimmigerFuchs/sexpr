@@ -11,7 +11,7 @@ A small s-expression parser based on [fast-sexpr](https://www.npmjs.com/package/
    ```yaml
    dependencies:
      sexpr:
-       github: grimmigerfuchs/sexpr
+       github: grimmigerFuchs/sexpr
    ```
 
 2. Run `shards install`
