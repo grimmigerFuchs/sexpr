@@ -1,6 +1,6 @@
 # sexpr
 
-[![GitHub release](https://img.shields.io/github/release/grimmigerfuchs/sexpr.svg)](https://github.com/grimmigerfuchs/sexpr/releases)
+[![GitHub release](https://img.shields.io/github/release/grimmigerFuchs/sexpr.svg)](https://github.com/grimmigerFuchs/sexpr/releases)
 
 A small s-expression parser based on [fast-sexpr](https://www.npmjs.com/package/fast-sexpr).
 
@@ -32,7 +32,7 @@ pp Sexpr.parse(source)
 
 ## Contributing
 
-1. Fork it (<https://github.com/grimmigerfuchs/sexpr/fork>)
+1. Fork it (<https://github.com/grimmigerFuchs/sexpr/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -40,4 +40,4 @@ pp Sexpr.parse(source)
 
 ## Contributors
 
-- [grimmigerFuchs](https://github.com/grimmigerfuchs) - creator and maintainer
+- [grimmigerFuchs](https://github.com/grimmigerFuchs) - creator and maintainer
