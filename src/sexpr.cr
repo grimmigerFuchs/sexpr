@@ -65,7 +65,11 @@ module Sexpr
     end
   end
 
+  def remove_comments(source : String) : String
+    source.gsub(/;;?.+/, nil)
+  end
+
   def parse(source : String) : Body
-    Wrapper.new(source).parse
+    Wrapper.new(remove_comments(source)).parse
   end
 end
