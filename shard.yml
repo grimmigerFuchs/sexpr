@@ -1,7 +1,7 @@
 name: sexpr
 description: |
   A small s-expression parser based on fast-sexpr
-version: 0.1.0
+version: 0.1.1
 
 authors:
   - grimmigerFuchs <dominic.grimm@gmail.com>
