@@ -5,8 +5,40 @@ module Sexpr
 
   VERSION = {{ `shards version`.stringify.chomp }}
 
-  alias Node = String | Body
-  alias Body = Array(String) | Array(Node)
+  module AST
+    abstract struct Node
+      property value
+
+      def initialize(@value)
+      end
+    end
+
+    struct Body < Node
+      property value : Array(Node)
+
+      def initialize
+        @value = [] of Node
+      end
+
+      def <<(other : Node) : self
+        @value << other
+
+        self
+      end
+
+      def <<(other : self) : self
+        self << other.value
+      end
+    end
+
+    struct SymNode < Node
+      property value : String
+    end
+
+    struct StringNode < Node
+      property value : String
+    end
+  end
 
   private class Wrapper
     private property i = 0
@@ -44,8 +76,8 @@ module Sexpr
       @i -= 1
     end
 
-    def parse : Body
-      body = [] of Node
+    def parse : AST::Body
+      body = AST::Body.new
 
       while char = get_char
         if char == ')'
@@ -53,10 +85,10 @@ module Sexpr
         elsif char == '('
           body << parse
         elsif char == '"'
-          body << read_value(Terms::STRING)
+          body << AST::StringNode.new(read_value(Terms::STRING))
         elsif !Terms::SPACE.matches?(char.to_s)
           un_get_char
-          body << read_value(Terms::LIST)
+          body.value << AST::SymNode.new(read_value(Terms::LIST))
           un_get_char
         end
       end
@@ -69,7 +101,7 @@ module Sexpr
     source.gsub(/;;?.+/, nil)
   end
 
-  def parse(source : String) : Body
+  def parse(source : String) : AST::Body
     Wrapper.new(remove_comments(source)).parse
   end
 end
