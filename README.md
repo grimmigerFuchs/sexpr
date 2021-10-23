@@ -27,7 +27,9 @@ source = "
 "
 
 pp Sexpr.parse(source)
-"
+
+# [["test", ["arg1", "arg2"], "something", "else"],
+#  ["another", "object", ["with", ["nests", ["too"]]]]]
 ```
 
 ## Contributing
