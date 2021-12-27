@@ -33,14 +33,14 @@ module Sexpr
 
     private def read_value(is_terminator : Regex) : String
       value = ""
-      while !is_terminator.matches?(strChar = get_char.to_s)
-        value += strChar
+      while !is_terminator.matches?(str_char = get_char.to_s)
+        value += str_char
       end
 
       value
     end
 
-    private def un_get_char
+    private def un_get_char : Nil
       @i -= 1
     end
 
