@@ -8,11 +8,11 @@ module Sexpr
   alias Node = String | Body
   alias Body = Array(String) | Array(Node)
 
-  private class Wrapper
+  class Parser
     private property i = 0
     private property source : String
 
-    private module Terms
+    module Terms
       STRING = /"/
       SPACE  = /\s/
       LIST   = /(#{SPACE})|[()]/
@@ -70,6 +70,6 @@ module Sexpr
   end
 
   def parse(source : String) : Body
-    Wrapper.new(remove_comments(source)).parse
+    Parser.new(remove_comments(source)).parse
   end
 end
