@@ -42,4 +42,4 @@ pp Sexpr.parse(source)
 
 ## Contributors
 
-- [grimmigerFuchs](https://github.com/grimmigerFuchs) - creator and maintainer
+- [Dominic Grimm](https://github.com/grimmigerFuchs) - creator and maintainer
