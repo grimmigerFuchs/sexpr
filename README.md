@@ -2,7 +2,7 @@
 
 [![GitHub release](https://img.shields.io/github/release/grimmigerFuchs/sexpr.svg)](https://github.com/grimmigerFuchs/sexpr/releases)
 
-A small s-expression parser based on [fast-sexpr](https://www.npmjs.com/package/fast-sexpr).
+A small s-expression parser based on [fast-sexpr](https://github.com/benthepoet/fast-sexpr).
 
 ## Installation
 
